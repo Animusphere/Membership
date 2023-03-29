@@ -40,10 +40,9 @@ namespace ApplicationMember.Pages
         public async Task<IActionResult> OnPostExportAsync()
         {
             var data = await _context.Users.ToListAsync(); 
-            var pdfStream = _exporter.GeneratePdf(data);
-            if (pdfStream != null)
+            if (data.Count >0)
             {
-                return File(pdfStream, "application/pdf", "membership.pdf");
+                return _exporter.GeneratePdf(data);
             }
             else return RedirectToPage();
         }
