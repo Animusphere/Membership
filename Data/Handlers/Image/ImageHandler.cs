@@ -34,7 +34,7 @@ namespace Onboarding.Handlers.ImageHandler
                     file.CopyTo(stream);
                 }
 
-                return path;
+                return filename;
             }
             catch (Exception e)
             {
@@ -42,12 +42,13 @@ namespace Onboarding.Handlers.ImageHandler
                 return null;
             }
         }
-        public bool DeleteImage(string path)
+        public bool DeleteImage(string filename)
         {
             try
             {
+                var path = Path.Combine("", hosting.WebRootPath + "\\images\\" + filename);
                 FileInfo Fi = new FileInfo(path);
-                System.IO.File.Delete(path);
+                File.Delete(path);
                 Fi.Delete();
                 return true;
             }

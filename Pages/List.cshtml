@@ -32,6 +32,7 @@
                   <td>@item.Email</td>
                   <td>@item.Address</td>
                   <td>@item.Phone</td>
+                  <td><img src="~/images/@item.Path" alt="profile image" class="rounded-circle" width="28" height="40"/><td/>
                    <td>
                     <div class="btn-group" role="group">
                         <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
@@ -41,12 +42,12 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteModalLabel-@item.ID">Delete Item</h5>
+                                    <h5 class="modal-title" id="deleteModalLabel-@item.ID" style="color:black;">Delete Item</h5>
                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                      </button>
                                  </div>
-                                     <div class="modal-body">
+                                     <div class="modal-body" style="color:black;">
                                         Are you sure you want to delete @item.Name?
                                      </div>
                                  <div class="modal-footer">

@@ -9,6 +9,6 @@ namespace Onboarding.Handlers.Image
     public interface IImageHandler
     {
         string UploadImage(IFormFile file);
-        bool DeleteImage(string path);
+        bool DeleteImage(string filename);
     }
 }
