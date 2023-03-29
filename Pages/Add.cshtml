@@ -1,0 +1,54 @@
+﻿@page "/add"
+@model ApplicationMember.Pages.AddModel
+@{
+    ViewData["Title"] = "Add Members";
+}
+<h1>Add New Member</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="POST" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>                 
+            <div class="form-group">
+                <label asp-for="member.NIK" class="control-label"></label>
+                <input asp-for="member.NIK" class="form-control" />
+                <span asp-validation-for="member.NIK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="member.Name" class="control-label"></label>
+                <input asp-for="member.Name" class="form-control" />
+                <span asp-validation-for="member.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="member.Email" class="control-label"></label>
+                <input asp-for="member.Email" class="form-control" />
+                <span asp-validation-for="member.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="member.Address" class="control-label"></label>
+                <input asp-for="member.Address" class="form-control" />
+                <span asp-validation-for="member.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="member.Phone" class="control-label"></label>
+                <input asp-for="member.Phone" accept="number" class="form-control" />
+                <span asp-validation-for="member.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="image-file" class="control-label">Upload an image:</label>
+                <input asp-for="ImageFile" type="file" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Member" class="btn btn-primary"   />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="list">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
